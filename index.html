@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Detail — Estética Automotiva de Elite</title>
+    
+    <!-- Tailwind CSS para estilização profissional -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fontes Premium de Luxo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;750;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Cinzel"', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        apexDark: '#07080A', // Preto absoluto de alta costura
+                        apexCard: '#0F1116', // Cinza grafite profundo
+                        apexBorder: '#1A1E26', // Borda sutil de liga metálica
+                        apexAmber: '#D4AF37', // Dourado metálico/ouro clássico
+                        apexAmberHover: '#C59B27'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #07080A;
+            color: #E2E8F0;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar corporativa */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07080A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1A1E26;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Hack ultra-preciso do slider range sem quebras de layout */
+        .slider-range {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+        }
+        .slider-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 50px;
+            height: 100vh;
+            cursor: ew-resize;
+            background: transparent;
+        }
+        .slider-range::-moz-range-thumb {
+            width: 50px;
+            height: 100vh;
+            cursor: ew-resize;
+            background: transparent;
+        }
+
+        /* Efeito de brilho de luz dinâmica (Glow) */
+        .glow-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            border-color: #D4AF37;
+        }
+
+        /* Simulação realista de hologramas e poeira no verniz "Antes" */
+        .swirl-marks {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 1px, transparent 3px);
+            background-size: 40px 40px;
+            opacity: 0.4;
+            mix-blend-mode: color-dodge;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-amber-500/20 selection:text-amber-300">
+
+    <!-- BANNER DE APRESENTAÇÃO ALPHAWEB (Captação de leads direta com tom profissional) -->
+    <div class="bg-gradient-to-r from-neutral-900 via-zinc-950 to-neutral-900 border-b border-apexBorder text-slate-300 text-[11px] sm:text-xs py-3.5 px-4 font-medium relative z-[100] shadow-2xl">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <span class="bg-amber-500/10 text-apexAmber text-[10px] font-mono px-2.5 py-1 rounded border border-amber-500/20 font-bold tracking-wider uppercase">AMBIENTE DE SIMULAÇÃO</span>
+                <span class="text-slate-400">Este portal é um modelo conceitual. Caso feche a parceria com a <strong>AlphaWeb</strong>, personalizaremos todas as imagens, logo, serviços e preços para a sua marca.</span>
+            </div>
+            <button onclick="abrirModalVenda()" class="bg-apexAmber hover:bg-apexAmberHover text-slate-950 hover:scale-[1.02] transition-all text-[10px] uppercase tracking-widest py-2 px-5 rounded font-black flex items-center gap-2 shadow-lg shadow-amber-500/10 whitespace-nowrap">
+                <i class="fa-solid fa-file-contract text-xs"></i> Como Ter este Site no meu Negócio?
+            </button>
+        </div>
+    </div>
+
+    <!-- CABEÇALHO DA ESTÉTICA -->
+    <header class="border-b border-apexBorder bg-apexDark/95 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-apexAmber to-amber-300 text-slate-950 flex items-center justify-center font-display text-xl font-bold shadow-lg shadow-amber-500/15">
+                    A
+                </div>
+                <div>
+                    <span class="font-display text-base sm:text-lg font-bold tracking-[3px] text-white block leading-none">APEX</span>
+                    <span class="text-[9px] font-mono text-apexAmber tracking-[5px] uppercase font-bold">DETAIL</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-[11px] font-semibold uppercase tracking-[2px] text-slate-400">
+                <a href="#view-slider" class="hover:text-white transition-colors">Antes & Depois</a>
+                <a href="#view-simulador" class="hover:text-white transition-colors text-apexAmber">Simulador</a>
+                <a href="#view-portfolio" class="hover:text-white transition-colors">Portfólio</a>
+                <a href="#view-depoimentos" class="hover:text-white transition-colors">Diferenciais</a>
+            </nav>
+
+            <a href="#view-simulador" class="bg-apexCard hover:bg-zinc-900 text-white text-[11px] font-bold px-4.5 py-2.5 rounded-lg border border-apexBorder hover:border-apexAmber/40 transition-all flex items-center gap-2 shadow-lg">
+                <i class="fa-solid fa-calculator text-apexAmber"></i> Simular Orçamento
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12 space-y-28">
+
+        <!-- HERO SECTION -->
+        <section class="text-center relative py-12">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-apexAmber/5 rounded-full blur-[140px] pointer-events-none"></div>
+
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-apexCard border border-apexBorder text-[10px] text-apexAmber font-mono mb-8 uppercase tracking-widest">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-apexAmber opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-apexAmber"></span>
+                </span>
+                Detalhamento Técnico & Proteção de Pintura Alemã
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl font-bold tracking-tight mb-8 leading-tight text-white max-w-4xl mx-auto font-display">
+                O Brilho Espelhado e a Proteção que o seu <span class="bg-gradient-to-r from-apexAmber via-amber-200 to-amber-500 bg-clip-text text-transparent">Carro Merece.</span>
+            </h1>
+
+            <p class="text-xs sm:text-sm md:text-base text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+                Esqueça lavagens convencionais que riscam a sua pintura. Nós executamos processos rigorosos de engenharia de detalhamento para resgatar o reflexo puro de fábrica do seu veículo.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
+                <a href="#view-simulador" class="w-full sm:w-auto bg-apexAmber hover:bg-apexAmberHover text-slate-950 font-extrabold px-8 py-4 rounded-xl transition-all text-xs tracking-widest uppercase shadow-xl shadow-amber-500/10">
+                    <i class="fa-solid fa-calculator mr-2"></i>Simular Valor Online
+                </a>
+                <a href="https://wa.me/554691147288" target="_blank" class="w-full sm:w-auto bg-apexCard hover:bg-zinc-900 text-slate-200 border border-apexBorder font-bold px-8 py-4 rounded-xl transition-all text-xs uppercase tracking-widest flex items-center justify-center gap-2.5">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> WhatsApp Comercial
+                </a>
+            </div>
+        </section>
+
+        <!-- SLIDER ANTES E DEPOIS INTERATIVO (Correção precisa de visual e tags) -->
+        <section id="view-slider" class="space-y-10">
+            <div class="text-center">
+                <span class="font-mono text-[10px] text-apexAmber font-bold tracking-widest uppercase">RESULTADOS REAIS</span>
+                <h2 class="text-2xl sm:text-4xl font-bold mt-1 text-white font-display">Correção Extrema de Verniz</h2>
+                <p class="text-xs text-slate-400 mt-2 max-w-lg mx-auto leading-relaxed">Arraste a barra central com o mouse ou toque do dedo para comparar a pintura riscada sob luz direta e o resultado de reflexo vítreo da Apex.</p>
+            </div>
+
+            <!-- Container do Slider de Alta Tecnologia -->
+            <div class="max-w-4xl mx-auto relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border border-apexBorder select-none">
+                
+                <!-- Camada base "Antes" (Filtro que deixa opaco, sem brilho, com marcas holográficas simuladas) -->
+                <div class="absolute inset-0 w-full h-full">
+                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80" 
+                         class="w-full h-full object-cover grayscale-[0.35] brightness-[0.7] contrast-[0.9] saturate-[0.55] blur-[0.4px]" 
+                         alt="Pintura opaca e riscada">
+                    <!-- Textura de teias de aranha simulando riscos de panos -->
+                    <div class="swirl-marks"></div>
+                </div>
+                
+                <span class="absolute bottom-4 left-4 bg-red-600/90 text-white font-mono text-[9px] font-bold px-3.5 py-1.5 rounded uppercase tracking-wider z-20 shadow-lg border border-red-500/20">
+                    Antes (Opaco e Riscado)
+                </span>
+
+                <!-- Camada superior "Depois" (Ultra polimento, cores profundas e reflexo cerâmico que é cortado pelo clip-path) -->
+                <img id="after-img" 
+                     src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80" 
+                     class="absolute inset-0 w-full h-full object-cover saturate-[1.4] brightness-[1.1] contrast-[1.12]" 
+                     style="clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);"
+                     alt="Após o polimento técnico Apex">
+                
+                <span class="absolute bottom-4 right-4 bg-emerald-600/90 text-white font-mono text-[9px] font-bold px-3.5 py-1.5 rounded uppercase tracking-wider z-20 shadow-lg border border-emerald-500/20">
+                    Depois (Apex Mirror Reflection)
+                </span>
+
+                <!-- Controle Range Transparente posicionado perfeitamente por cima -->
+                <input type="range" min="0" max="100" value="50" id="slider-range-control" 
+                       class="slider-range absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-40">
+
+                <!-- Barra divisória visual que acompanha o range -->
+                <div id="slider-handle" class="absolute top-0 bottom-0 w-[2px] bg-apexAmber pointer-events-none z-30 shadow-[0_0_20px_rgba(212,175,55,0.8)]" style="left: 50%;">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-apexAmber text-slate-950 rounded-full flex items-center justify-center shadow-2xl border border-slate-950">
+                        <i class="fa-solid fa-arrows-left-right text-xs"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMULADOR DE VALORES INTERATIVO -->
+        <section id="view-simulador" class="space-y-10">
+            <div class="text-center">
+                <span class="font-mono text-[10px] text-apexAmber font-bold tracking-widest uppercase">SIMULAÇÃO DE SERVIÇOS</span>
+                <h2 class="text-2xl sm:text-4xl font-bold mt-1 text-white font-display">Estime Seu Orçamento na Hora</h2>
+                <p class="text-xs text-slate-400 mt-2 max-w-lg mx-auto">Selecione a categoria do seu veículo e os módulos de estética desejados para uma estimativa completa de valor.</p>
+            </div>
+
+            <div class="bg-apexCard border border-apexBorder rounded-3xl p-6 sm:p-10 shadow-2xl max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
+                
+                <!-- Coluna de Opções -->
+                <div class="md:col-span-7 space-y-6">
+                    
+                    <!-- Nome do Cliente -->
+                    <div>
+                        <label class="block text-[9px] font-bold text-slate-400 mb-2 uppercase tracking-widest font-mono">Modelo do Veículo / Seu Nome (Opcional)</label>
+                        <input type="text" id="calc-client-name" placeholder="Ex: Civic G10 - Lucas" class="w-full bg-apexDark border border-apexBorder rounded-xl py-3.5 px-4 text-xs text-slate-250 placeholder-slate-650 focus:outline-none focus:border-apexAmber font-mono transition-all">
+                    </div>
+
+                    <!-- Porte do Veículo -->
+                    <div>
+                        <label class="block text-[9px] font-bold text-slate-400 mb-3 uppercase tracking-widest font-mono">1. Selecione a Categoria do Carro</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <label class="relative flex flex-col p-4 bg-apexDark border border-apexBorder rounded-2xl cursor-pointer hover:border-apexAmber/40 transition-all select-none">
+                                <input type="radio" name="car-size" value="0" checked class="absolute top-4 right-4 text-apexAmber focus:ring-0" onclick="calculateTotal()">
+                                <span class="font-bold text-slate-200 text-xs uppercase font-mono tracking-wider">Hatch</span>
+                                <span class="text-[9px] text-slate-500 mt-1 leading-snug">Compactos, Kwid, Gol, HB20, Polo</span>
+                                <span class="text-apexAmber font-bold mt-2 font-mono text-xs">Preço Base</span>
+                            </label>
+
+                            <label class="relative flex flex-col p-4 bg-apexDark border border-apexBorder rounded-2xl cursor-pointer hover:border-apexAmber/40 transition-all select-none">
+                                <input type="radio" name="car-size" value="50" class="absolute top-4 right-4 text-apexAmber focus:ring-0" onclick="calculateTotal()">
+                                <span class="font-bold text-slate-200 text-xs uppercase font-mono tracking-wider">Sedan / Executivo</span>
+                                <span class="text-[9px] text-slate-500 mt-1 leading-snug">Civic, Corolla, Cruze, Jetta, BMW</span>
+                                <span class="text-apexAmber font-bold mt-2 font-mono text-xs">+ R$ 50,00</span>
+                            </label>
+
+                            <label class="relative flex flex-col p-4 bg-apexDark border border-apexBorder rounded-2xl cursor-pointer hover:border-apexAmber/40 transition-all select-none">
+                                <input type="radio" name="car-size" value="100" class="absolute top-4 right-4 text-apexAmber focus:ring-0" onclick="calculateTotal()">
+                                <span class="font-bold text-slate-200 text-xs uppercase font-mono tracking-wider">SUV / Picape</span>
+                                <span class="text-[9px] text-slate-500 mt-1 leading-snug">Compass, Hilux, Toro, Creta, SW4</span>
+                                <span class="text-apexAmber font-bold mt-2 font-mono text-xs">+ R$ 100,00</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Módulos de Estética -->
+                    <div>
+                        <label class="block text-[9px] font-bold text-slate-400 mb-3 uppercase tracking-widest font-mono">2. Escolha os Serviços Premium</label>
+                        <div class="space-y-3">
+                            <label class="flex items-start gap-4 p-4 bg-apexDark border border-apexBorder rounded-xl cursor-pointer hover:border-apexAmber/40 transition-all select-none">
+                                <input type="checkbox" id="srv-lavagem" value="130" checked class="mt-1 rounded text-apexAmber bg-apexDark border-slate-700 focus:ring-0" onclick="calculateTotal()">
+                                <div class="flex-grow">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-bold text-xs text-slate-200">Lavagem Detalhada & Proteção de Pintura</span>
+                                        <span class="text-apexAmber font-mono text-xs font-bold">R$ 130,00</span>
+                                    </div>
+                                    <span class="text-[10px] text-slate-500 block mt-1 leading-relaxed">Remoção técnica de piche e impurezas metálicas com descontaminante fibroso, pincelamento de frestas e aplicação de cera protetiva alemã.</span>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start gap-4 p-4 bg-apexDark border border-apexBorder rounded-xl cursor-pointer hover:border-apexAmber/40 transition-all select-none">
+                                <input type="checkbox" id="srv-higienizacao" value="190" class="mt-1 rounded text-apexAmber bg-apexDark border-slate-700 focus:ring-0" onclick="calculateTotal()">
+                                <div class="flex-grow">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-bold text-xs text-slate-200">Higienização Interna & Oxi-Sanitização</span>
+                                        <span class="text-apexAmber font-mono text-xs font-bold">R$ 190,00</span>
+                                    </div>
+                                    <span class="text-[10px] text-slate-500 block mt-1 leading-relaxed">Extração profunda de sujeira de bancos e tetos com sanitizantes biodegradáveis, hidratação de plásticos/couros e ozonização de ar ativa.</span>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start gap-4 p-4 bg-apexDark border border-apexBorder rounded-xl cursor-pointer hover:border-apexAmber/40 transition-all select-none">
+                                <input type="checkbox" id="srv-polimento" value="380" class="mt-1 rounded text-apexAmber bg-apexDark border-slate-700 focus:ring-0" onclick="calculateTotal()">
+                                <div class="flex-grow">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-bold text-xs text-slate-200">Polimento Técnico (Recuperação de Brilho)</span>
+                                        <span class="text-apexAmber font-mono text-xs font-bold">R$ 380,00</span>
+                                    </div>
+                                    <span class="text-[10px] text-slate-500 block mt-1 leading-relaxed">Eliminação de marcas de lavagem, micro-riscos (hologramas) e oxidações no verniz original, gerando o efeito espelhado puro.</span>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start gap-4 p-4 bg-apexDark border border-apexBorder rounded-xl cursor-pointer hover:border-apexAmber/40 transition-all select-none">
+                                <input type="checkbox" id="srv-vitrificacao" value="750" class="mt-1 rounded text-apexAmber bg-apexDark border-slate-700 focus:ring-0" onclick="calculateTotal()">
+                                <div class="flex-grow">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-bold text-xs text-slate-200">Vitrificação Cerâmica 9H (Proteção Longa)</span>
+                                        <span class="text-apexAmber font-mono text-xs font-bold">R$ 750,00</span>
+                                    </div>
+                                    <span class="text-[10px] text-slate-500 block mt-1 leading-relaxed">Aplicação de película de vidro líquida com dureza 9H que protege contra raios UV, fezes de pássaros e chuva ácida por até 3 anos.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Painel de Fechamento -->
+                <div class="md:col-span-5 bg-apexDark border border-apexBorder p-6 rounded-2xl flex flex-col justify-between h-full space-y-6">
+                    <div>
+                        <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest font-bold">RESUMO DA ESTIMATIVA</span>
+                        <div class="border-b border-apexBorder pb-4 mt-3">
+                            <span class="text-[10px] text-slate-400 block font-mono">Porte do Veículo</span>
+                            <span id="summary-size" class="text-xs font-bold text-white uppercase font-mono">Hatch (R$ 0)</span>
+                        </div>
+
+                        <div class="border-b border-apexBorder py-4">
+                            <span class="text-[10px] text-slate-400 block font-mono mb-2">Serviços Selecionados</span>
+                            <div id="summary-services-list" class="space-y-2 text-xs">
+                                <!-- Injetado dinamicamente -->
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-500/5 border border-apexAmber/20 p-3.5 rounded-xl mt-4">
+                            <div class="flex justify-between items-center text-xs font-bold text-apexAmber">
+                                <span>Desconto à Vista (PIX)</span>
+                                <span>- 5%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-apexBorder">
+                        <div class="flex items-end justify-between">
+                            <div>
+                                <span class="text-[10px] font-mono text-slate-500 uppercase font-bold">TOTAL ESTIMADO</span>
+                                <div class="text-3xl sm:text-4xl font-black text-apexAmber font-mono mt-1" id="simulator-total-val">R$ 130</div>
+                            </div>
+                        </div>
+
+                        <button onclick="sendBudgetWhatsApp()" class="w-full mt-6 py-4 bg-apexAmber hover:bg-apexAmberHover text-slate-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-xl shadow-amber-500/10 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Enviar Agendamento no WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VITRINE DE PORTFÓLIO -->
+        <section id="view-portfolio" class="space-y-10">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                <div>
+                    <span class="font-mono text-[10px] text-apexAmber font-bold tracking-widest uppercase">VITRINE OPERACIONAL</span>
+                    <h2 class="text-2xl sm:text-4xl font-bold mt-1 text-white font-display">Galeria de Resultados</h2>
+                    <p class="text-xs text-slate-400 mt-2 max-w-lg leading-relaxed">Conheça o rigor estético que aplicamos no acabamento e proteção dos carros de nossos clientes.</p>
+                </div>
+                
+                <!-- Abas de Filtros -->
+                <div class="flex gap-2 bg-apexCard p-1 rounded-xl border border-apexBorder max-w-max self-start text-xs font-mono">
+                    <button onclick="filterPortfolio('todos')" id="p-btn-todos" class="px-4 py-2 rounded-lg font-bold transition-all bg-apexAmber text-slate-950">Todos</button>
+                    <button onclick="filterPortfolio('polimento')" id="p-btn-polimento" class="px-4 py-2 rounded-lg font-bold transition-all text-slate-450 hover:text-slate-200">Polimento</button>
+                    <button onclick="filterPortfolio('vitrificacao')" id="p-btn-vitrificacao" class="px-4 py-2 rounded-lg font-bold transition-all text-slate-450 hover:text-slate-200">Vitrificação</button>
+                </div>
+            </div>
+
+            <!-- Grid de Projetos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="p-card bg-apexCard border border-apexBorder rounded-2xl overflow-hidden group hover:border-apexAmber/40 transition-all duration-300" data-cat="polimento">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Porsche Vermelho">
+                        <span class="absolute top-3 left-3 bg-apexAmber text-slate-950 font-mono text-[8px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Polimento Técnico</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-bold text-white text-sm">Porsche 911 Carrera S</h4>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Eliminação completa de hologramas de lavagens incorretas na pintura sólida de alto padrão.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-card bg-apexCard border border-apexBorder rounded-2xl overflow-hidden group hover:border-apexAmber/40 transition-all duration-300" data-cat="vitrificacao">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Audi R8">
+                        <span class="absolute top-3 left-3 bg-apexAmber text-slate-950 font-mono text-[8px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Vitrificação 9H</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-bold text-white text-sm">Audi R8 V10 Plus</h4>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Proteção cerâmica ultra hidrofóbica com toque aveludado e resistência contra fezes de pássaros.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-card bg-apexCard border border-apexBorder rounded-2xl overflow-hidden group hover:border-apexAmber/40 transition-all duration-300" data-cat="polimento">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mustang">
+                        <span class="absolute top-3 left-3 bg-apexAmber text-slate-950 font-mono text-[8px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Detalhamento</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-bold text-white text-sm">Mustang GT V8</h4>
+                        <p class="text-slate-500 text-xs mt-2 leading-relaxed">Tratamento de plásticos foscos e polimento químico com selagem de metais em escapamento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEPOIMENTOS E FAQS -->
+        <section id="view-depoimentos" class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-apexBorder pt-20">
+            <div class="space-y-6">
+                <span class="font-mono text-[10px] text-apexAmber font-bold tracking-widest uppercase">PADRÃO APEX</span>
+                <h3 class="text-2xl font-bold text-white font-display">A Engenharia de Cuidados que seu Carro Exige</h3>
+                <p class="text-slate-450 text-xs sm:text-sm leading-relaxed font-light">
+                    Muitas estéticas de baixo custo utilizam produtos ácidos e alcalinos pesados para limpar rapidamente, o que remove o verniz natural do carro com o tempo. Na **Apex Detail**, utilizamos insumos homologados importados da Alemanha e panos de microfibra de alta gramatura para garantir que a proteção permaneça por anos sem causar micro-riscos.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-circle-check text-apexAmber text-xs"></i>
+                        <span class="text-xs text-slate-300 font-mono">Insumos Originais Alemães</span>
+                    </div>
+                    <div class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-gem text-apexAmber text-xs"></i>
+                        <span class="text-xs text-slate-300 font-mono">Espelhamento Puro</span>
+                    </div>
+                    <div class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-shield-halved text-apexAmber text-xs"></i>
+                        <span class="text-xs text-slate-300 font-mono">Garantia Real 9H</span>
+                    </div>
+                    <div class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-hourglass-half text-apexAmber text-xs"></i>
+                        <span class="text-xs text-slate-300 font-mono">Agilidade e Pontualidade</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQs Rápidas -->
+            <div class="space-y-4">
+                <h4 class="font-bold text-white text-base font-display mb-4">Dúvidas Frequentes</h4>
+                <div class="bg-apexCard border border-apexBorder p-4 rounded-xl">
+                    <span class="font-bold text-xs text-white block">Quanto tempo demora o polimento técnico?</span>
+                    <span class="text-[10px] text-slate-500 block mt-2 leading-relaxed">Em média, de 1 a 2 dias de serviço. O polimento técnico exige várias etapas rigorosas de corte, refino e lustro para garantir o melhor acabamento possível sem hologramas.</span>
+                </div>
+                <div class="bg-apexCard border border-apexBorder p-4 rounded-xl">
+                    <span class="font-bold text-xs text-white block">Qual o benefício real da vitrificação cerâmica?</span>
+                    <span class="text-[10px] text-slate-500 block mt-2 leading-relaxed">Ela sela o verniz original, cria uma camada antiaderente contra chuva ácida e fezes de pássaros e repele sujeira para que o carro fique limpo por muito mais tempo.</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="border-t border-apexBorder bg-apexDark py-12 px-6 text-slate-550 text-xs">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <span class="font-display font-bold text-white tracking-[3px] text-sm">APEX <strong class="text-apexAmber font-mono font-bold text-xs">DETAIL</strong></span>
+                <span class="text-slate-600">© 2026. Todos os direitos reservados.</span>
+            </div>
+            <div class="flex gap-4 font-mono text-[10px]">
+                <span class="text-emerald-500/70 flex items-center gap-2">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    Agendamento Ativo via WhatsApp
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE APRESENTAÇÃO ALPHAWEB (Processamento de vendas B2B) -->
+    <div id="modal-venda-alphaweb" class="hidden fixed inset-0 z-[200] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="max-w-lg w-full bg-apexCard border border-apexBorder p-8 rounded-3xl shadow-2xl relative">
+            <button onclick="fecharModalVenda()" class="absolute top-5 right-5 text-slate-500 hover:text-slate-300 transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            
+            <div class="flex flex-col items-center text-center mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-apexAmber flex items-center justify-center mb-4 border border-amber-500/20">
+                    <i class="fa-solid fa-laptop-code text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-lg text-white font-display">Sua Estética Automotiva Online</h3>
+                <p class="text-[11px] text-slate-400 mt-1">Veja como personalizamos essa tecnologia para o seu negócio local:</p>
+            </div>
+
+            <div class="space-y-4 text-xs text-slate-300 leading-relaxed font-light">
+                <div class="bg-apexDark/60 p-4 rounded-xl border border-apexBorder space-y-2">
+                    <span class="font-bold text-apexAmber font-mono text-[10px] block">🎨 1. IDENTIDADE VISUAL EXCLUSIVA</span>
+                    <p class="text-[11px]">Substituiremos todo o logotipo, textos, marcas, fotos de carros e cores para que o site combine 100% com a identidade visual da sua empresa.</p>
+                </div>
+
+                <div class="bg-apexDark/60 p-4 rounded-xl border border-apexBorder space-y-2">
+                    <span class="font-bold text-apexAmber font-mono text-[10px] block">📊 2. CALCULO COM OS SEUS VALORES REAIS</span>
+                    <p class="text-[11px]">Configuraremos a sua própria lista de serviços e preços reais no simulador de agendamento, facilitando o recebimento de pedidos prontos no WhatsApp.</p>
+                </div>
+
+                <div class="bg-apexDark/60 p-4 rounded-xl border border-apexBorder space-y-2">
+                    <span class="font-bold text-apexAmber font-mono text-[10px] block">🌐 3. REGISTRO DE DOMÍNIO JÁ INTEGRADO</span>
+                    <p class="text-[11px]">Você não precisa se preocupar com nada burocrático. Nós registramos o seu domínio profissional (.com.br) e colocamos no ar em servidores rápidos livres de mensalidades pesadas.</p>
+                </div>
+            </div>
+
+            <a href="https://wa.me/554691147288?text=Olá,%20vi%20o%20site%20modelo%20da%20Estética%20Automotiva%20e%20gostaria%20de%20adquirir%20um%20projeto%20desse%20para%20o%20meu%20negócio!" target="_blank" class="w-full mt-6 py-4.5 bg-apexAmber hover:bg-apexAmberHover text-slate-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-lg shadow-amber-500/10">
+                <i class="fa-brands fa-whatsapp text-sm"></i> Adquirir Meu Site por R$ 350,00
+            </a>
+        </div>
+    </div>
+
+    <!-- TOAST DE NOTIFICAÇÃO SUTIL -->
+    <div id="sys-toast" class="hidden fixed bottom-6 right-6 z-[250] bg-zinc-900 border border-apexBorder text-slate-200 px-5 py-4 rounded-xl shadow-2xl font-mono text-xs flex items-center gap-3">
+        <span class="h-2 w-2 rounded-full bg-apexAmber animate-ping"></span>
+        <span id="sys-toast-text">Ação executada</span>
+    </div>
+
+    <!-- JAVASCRIPT MASTER: Controle de Interatividade e Cálculos de Orçamentos -->
+    <script>
+        // LÓGICA DO SLIDER DE ANTES E DEPOIS (CORREÇÃO DE BUGS E TAGS)
+        const sliderControl = document.getElementById('slider-range-control');
+        const afterImg = document.getElementById('after-img');
+        const sliderHandle = document.getElementById('slider-handle');
+
+        sliderControl.addEventListener('input', (e) => {
+            const value = e.target.value;
+            // "Depois" está posicionado do lado direito, portanto clipamos do valor para 100%
+            afterImg.style.clipPath = `polygon(${value}% 0, 100% 0, 100% 100%, ${value}% 100%)`;
+            sliderHandle.style.left = `${value}%`;
+        });
+
+        // BANCO DE DADOS LOCAL DO SIMULADOR
+        const servicesData = {
+            'srv-lavagem': { nome: "Lavagem Detalhada & Proteção", preco: 130 },
+            'srv-higienizacao': { nome: "Higienização Interna & Oxi-Sanitização", preco: 190 },
+            'srv-polimento': { nome: "Polimento Técnico Comercial", preco: 380 },
+            'srv-vitrificacao': { nome: "Vitrificação Cerâmica 9H", preco: 750 }
+        };
+
+        // CÁLCULO DINÂMICO DE ORÇAMENTO
+        function calculateTotal() {
+            let total = 0;
+            
+            // 1. Porte do Veículo (Adiciona valor base)
+            const selectedCarSize = document.querySelector('input[name="car-size"]:checked');
+            const carBaseValue = parseInt(selectedCarSize.value);
+            total += carBaseValue;
+
+            // Atualiza o texto do resumo
+            const summarySizeText = document.getElementById('summary-size');
+            let sizeName = "Hatch";
+            if (carBaseValue === 50) sizeName = "Sedan / Executivo";
+            if (carBaseValue === 100) sizeName = "SUV / Picape";
+            summarySizeText.innerText = `${sizeName} (+ R$ ${carBaseValue},00)`;
+
+            // 2. Serviços Selecionados
+            const servicesContainer = document.getElementById('summary-services-list');
+            servicesContainer.innerHTML = "";
+            let selectedCount = 0;
+
+            for (let id in servicesData) {
+                const element = document.getElementById(id);
+                if (element && element.checked) {
+                    total += servicesData[id].preco;
+                    selectedCount++;
+
+                    // Injeta na lista de resumo
+                    servicesContainer.innerHTML += `
+                        <div class="flex justify-between items-center text-slate-300 font-mono">
+                            <span>• ${servicesData[id].nome}</span>
+                            <span class="font-bold text-apexAmber">R$ ${servicesData[id].preco},00</span>
+                        </div>
+                    `;
+                }
+            }
+
+            if (selectedCount === 0) {
+                servicesContainer.innerHTML = `<span class="text-slate-500 italic text-[10px]">Nenhum serviço selecionado.</span>`;
+            }
+
+            // 3. Aplica o desconto de 5% se for pagamento à vista (PIX)
+            const finalValue = Math.ceil(total * 0.95);
+
+            // Atualiza o valor final do visor
+            document.getElementById('simulator-total-val').innerText = `R$ ${finalValue}`;
+        }
+
+        // REDIRECIONAMENTO COM BRIEFING MASTER PARA O WHATSAPP
+        function sendBudgetWhatsApp() {
+            const clientName = document.getElementById('calc-client-name').value.trim() || "Cliente do Site";
+            const selectedCarSize = document.querySelector('input[name="car-size"]:checked');
+            const carBaseValue = parseInt(selectedCarSize.value);
+            
+            let sizeName = "Hatch";
+            if (carBaseValue === 50) sizeName = "Sedan / Executivo";
+            if (carBaseValue === 100) sizeName = "SUV / Picape";
+
+            let selectedServices = [];
+            let totalValue = carBaseValue;
+
+            for (let id in servicesData) {
+                const element = document.getElementById(id);
+                if (element && element.checked) {
+                    totalValue += servicesData[id].preco;
+                    selectedServices.push(`${servicesData[id].nome} (R$ ${servicesData[id].preco},00)`);
+                }
+            }
+
+            const finalValue = Math.ceil(totalValue * 0.95);
+
+            if (selectedServices.length === 0) {
+                showToast("Por favor, selecione pelo menos um serviço premium para o agendamento!");
+                return;
+            }
+
+            // Formatação do Ticket de Atendimento Comercial
+            let message = `🏎️ *APEX DETAIL — AGENDAMENTO DE ESTÉTICA*\n`;
+            message += `----------------------------------------\n`;
+            message += `👤 *Cliente:* ${clientName}\n`;
+            message += `🚗 *Porte do Carro:* ${sizeName}\n`;
+            message += `🛠️ *Serviços Selecionados:*\n`;
+            selectedServices.forEach(srv => {
+                message += `   - ${srv}\n`;
+            });
+            message += `----------------------------------------\n`;
+            message += `💰 *Total Estimado (C/ Desconto PIX):* R$ ${finalValue},00\n`;
+            message += `----------------------------------------\n\n`;
+            message += `Olá Apex Detail, fiz a simulação de serviços no site e gostaria de confirmar a agenda e os horários disponíveis para o meu carro!`;
+
+            const encodedMessage = encodeURIComponent(message);
+            // Redireciona para o novo WhatsApp comercial
+            window.open(`https://wa.me/554691147288?text=${encodedMessage}`, '_blank');
+        }
+
+        // FILTROS DA GALERIA DO PORTFÓLIO
+        function filterPortfolio(category) {
+            const cards = document.querySelectorAll('.p-card');
+            
+            // Gerencia os estados visuais dos botões de abas
+            const buttons = {
+                todos: document.getElementById('p-btn-todos'),
+                polimento: document.getElementById('p-btn-polimento'),
+                vitrificacao: document.getElementById('p-btn-vitrificacao')
+            };
+
+            for (let key in buttons) {
+                if (buttons[key]) {
+                    buttons[key].classList.remove('bg-apexAmber', 'text-slate-950');
+                    buttons[key].classList.add('text-slate-450', 'hover:text-slate-200');
+                }
+            }
+
+            if (buttons[category]) {
+                buttons[category].classList.remove('text-slate-450', 'hover:text-slate-200');
+                buttons[category].classList.add('bg-apexAmber', 'text-slate-950');
+            }
+
+            // Mostra ou oculta os itens filtrados com animação suave
+            cards.forEach(card => {
+                const itemCat = card.getAttribute('data-cat');
+                if (category === 'todos' || itemCat === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => { card.style.opacity = '1'; }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => { card.style.display = 'none'; }, 200);
+                }
+            });
+        }
+
+        // AUXILIARES DE COMPORTAMENTO DO SISTEMA
+        function abrirModalVenda() {
+            document.getElementById('modal-venda-alphaweb').classList.remove('hidden');
+        }
+
+        function fecharModalVenda() {
+            document.getElementById('modal-venda-alphaweb').classList.add('hidden');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('sys-toast');
+            document.getElementById('sys-toast-text').innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => { toast.classList.add('hidden'); }, 3500);
+        }
+
+        // Inicialização com cálculo padrão
+        window.onload = function() {
+            calculateTotal();
+        }
+    </script>
+</body>
+</html>
